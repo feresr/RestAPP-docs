@@ -1,4 +1,13 @@
 *.bak
-RestApp Solution/RestApp.Common/bin/Debug/Autofac.Integration.Mvc.dll
-RestApp Solution/RestApp.Common/bin/Debug/Autofac.dll
-RestApp Solution/RestApp.Common/bin/Debug/Autofac.xml
+RestApp Solution/RestApp.Common/bin
+RestApp Solution/RestApp.Common/obj
+RestApp Solution/RestApp.Web/bin
+RestApp Solution/RestApp.Web/obj
+RestApp Solution/RestApp.Services/bin
+RestApp Solution/RestApp.Services/obj
+RestApp Solution/RestApp.Data/bin
+RestApp Solution/RestApp.Data/obj
+RestApp Solution/RestApp.Core/bin
+RestApp Solution/RestApp.Core/obj
+RestApp Solution/RestApp.Web.Framework/bin
+RestApp Solution/RestApp.Web.Framework/obj
