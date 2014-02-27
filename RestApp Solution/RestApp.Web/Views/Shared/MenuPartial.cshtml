@@ -1,0 +1,95 @@
+﻿<div class="navbar navbar-static-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse"><span
+                class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+            </a><a class="brand" href="@Url.Action("Index", "Home")">@T("View.Common.Start")</a>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i
+                        class="icon-list-alt icon-white"></i> @T("View.User.Users")-@T("View.Role.Roles")<b
+                            class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("Index", "User")"><i class="icon-user"></i> @T("View.User.Users")</a>
+                            </li>
+                            <li><a href="@Url.Action("Index", "Role")"><i class="icon-eye-open"></i> @T("View.Role.Roles")</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">SEG<b
+                        class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("Index", "BuyOrder")">@T("View.BuyOrder.BuyOrders")</a>
+                            </li>
+                            <li><a href="@Url.Action("Index", "Proforma")">@T("View.Proforma.Proformas")</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">TRA<b
+                        class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("Index", "Country")"><i class="icon-globe"></i> @T("View.Country.Countries")</a>
+                            </li>
+                            <li><a href="@Url.Action("Index", "Provider")">@T("View.Provider.Providers")</a> </li>
+                            <li><a href="@Url.Action("Index", "CustomHouse")">@T("View.CustomHouse.CustomsHouses")</a>
+                            </li>
+                            <li><a href="@Url.Action("Index", "CustomBroker")">@T("View.CustomBroker.CustomsBrokers")</a>
+                            </li>
+                            <li><a href="@Url.Action("Index", "BorderCrossing")">@T("View.BorderCrossing.BordersCrossings")</a>
+                            </li>
+                            <li><a href="@Url.Action("Index", "Harbor")">@T("View.Harbor.Harbors")</a> </li>
+                            <li><a href="@Url.Action("Index", "CompanyTransportMeans")">@T("View.CompanyTransportMeans.CompaniesTransportMeans")</a> </li>
+                            <li><a href="@Url.Action("Index", "CompanyInpectionPreboarding")">@T("View.CompanyInpectionPreboarding.CompaniesInpectionPreboarding")</a> </li>
+                        </ul>
+                    </li>
+                    <li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i
+                        class="icon-briefcase icon-white"></i> @T("View.Bank.Banks")<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("Index", "Currency")">@T("View.Currency.Currencies")</a>
+                            </li>
+                            <li><a href="@Url.Action("Index", "Bank")">@T("View.Bank.Banks")</a> </li>
+                            <li><a href="@Url.Action("Index", "Incoterm")">@T("View.Incoterm.Incoterms")</a>
+                            </li>
+                            <li><a href="@Url.Action("Index", "ExteriorBeneficiary")">@T("View.ExteriorBeneficiary.ExteriorBeneficiaries")</a>
+                            </li>
+                            <li class="dropdown-submenu"><a tabindex="-1" href="#">@T("View.Others.Payment.Payments")</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="@Url.Action("Index", "PaymentMean")">@T("View.PaymentMean.PaymentMeans")</a>
+                                    </li>
+                                    <li><a href="@Url.Action("Index", "PaymentCondition")">@T("View.PaymentCondition.PaymentConditions")</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i
+                        class="icon-wrench icon-white"></i> @T("View.Configuration")<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("Index", "Language")">@T("View.Configuration.Language.Languages")</a>
+                            </li>
+                            <li><a href="@Url.Action("Index", "Property")">@T("View.Configuration.Property.Properties")</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                    <li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">@T("View.Product.Products")<b
+                        class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("Index", "Product")">@T("View.Product.Products")</a> </li>
+                            <li><a href="@Url.Action("MakeIndex", "Product")">@T("View.Product.Make.Makes")</a>
+                            </li>
+                            <li><a href="@Url.Action("ModelIndex", "Product")">@T("View.Product.Model.Models")</a>
+                            </li>
+                            <li><a href="@Url.Action("Index", "StorageDeposit")">@T("View.StorageDeposit.StorageDeposits")</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

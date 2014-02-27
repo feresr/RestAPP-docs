@@ -1,0 +1,4 @@
+*.bak
+RestApp Solution/RestApp.Common/bin/Debug/Autofac.Integration.Mvc.dll
+RestApp Solution/RestApp.Common/bin/Debug/Autofac.dll
+RestApp Solution/RestApp.Common/bin/Debug/Autofac.xml

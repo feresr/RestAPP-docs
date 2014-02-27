@@ -1,0 +1,26 @@
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Common\bin\Debug\RestApp.Common.dll
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Common\bin\Debug\RestApp.Common.pdb
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Common\bin\Debug\Ionic.Zip.dll
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Common\bin\Debug\NPOI.dll
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Common\bin\Debug\RestApp.Core.dll
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Common\bin\Debug\Autofac.dll
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Common\bin\Debug\Autofac.Integration.Mvc.dll
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Common\bin\Debug\RestApp.Core.pdb
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Common\bin\Debug\NPOI.xml
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Common\bin\Debug\Autofac.xml
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Common\obj\Debug\RestApp.Common.csprojResolveAssemblyReference.cache
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Common\obj\Debug\RestApp.Common.dll
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Common\obj\Debug\RestApp.Common.pdb
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Common\bin\Debug\RestApp.Common.dll
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Common\bin\Debug\RestApp.Common.pdb
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Common\bin\Debug\Ionic.Zip.dll
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Common\bin\Debug\NPOI.dll
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Common\bin\Debug\RestApp.Core.dll
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Common\bin\Debug\Autofac.dll
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Common\bin\Debug\Autofac.Integration.Mvc.dll
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Common\bin\Debug\RestApp.Core.pdb
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Common\bin\Debug\NPOI.xml
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Common\bin\Debug\Autofac.xml
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Common\obj\Debug\RestApp.Common.csprojResolveAssemblyReference.cache
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Common\obj\Debug\RestApp.Common.dll
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Common\obj\Debug\RestApp.Common.pdb

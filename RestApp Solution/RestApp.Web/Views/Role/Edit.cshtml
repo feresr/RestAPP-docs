@@ -1,0 +1,26 @@
+﻿@model RestApp.Models.Roles.RoleModel
+
+@{
+    ViewBag.Title = T("View.Role.Edit").Text;
+}
+
+<div>
+    <a href="@Url.Action("Index")" class="btn btn-inverse btn-mini"><i class="icon-arrow-left icon-white"></i> @T("View.Common.BackToList").Text</a> 
+</div>
+
+@using (Html.BeginForm("Edit", "Role", FormMethod.Post, new { @class = "form-horizontal" })) {
+    @Html.ValidationSummary(true)
+	<div class="well">
+    <legend>@T("View.Role.Edit.Edit"): <b>@Model.Name</b></legend>
+    @Html.Partial("_CreateOrEditRole", Model)
+    </div>
+       
+}
+
+<div>
+    <a href="@Url.Action("Index")" class="btn btn-inverse btn-mini"><i class="icon-arrow-left icon-white"></i> @T("View.Common.BackToList").Text</a> 
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

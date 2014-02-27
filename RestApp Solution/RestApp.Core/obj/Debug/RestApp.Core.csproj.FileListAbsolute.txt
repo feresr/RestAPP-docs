@@ -1,0 +1,20 @@
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Core\bin\Debug\RestApp.Core.dll
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Core\bin\Debug\RestApp.Core.pdb
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Core\bin\Debug\Autofac.Configuration.dll
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Core\bin\Debug\Autofac.dll
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Core\bin\Debug\Autofac.Integration.Mvc.dll
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Core\bin\Debug\MvcPaging.dll
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Core\bin\Debug\Autofac.xml
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Core\obj\Debug\RestApp.Core.dll
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Core\obj\Debug\RestApp.Core.pdb
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Core\bin\Debug\RestApp.Core.dll.config
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Core\bin\Debug\RestApp.Core.dll
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Core\bin\Debug\RestApp.Core.pdb
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Core\bin\Debug\Autofac.Configuration.dll
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Core\bin\Debug\Autofac.dll
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Core\bin\Debug\Autofac.Integration.Mvc.dll
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Core\bin\Debug\MvcPaging.dll
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Core\bin\Debug\Autofac.xml
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Core\obj\Debug\RestApp.Core.dll
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Core\obj\Debug\RestApp.Core.pdb
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Core\obj\Debug\RestApp.Core.csprojResolveAssemblyReference.cache

@@ -1,0 +1,203 @@
+﻿@model RestApp.Web.Models.Install.InstallModel
+@using RestApp.Core.Infrastructure;
+@using RestApp.Web.Models.Install;
+@using RestApp.Web.Infrastructure.Installation;
+@{
+    //localizatrion service for installation service
+    //we do not use standart nopCommerce localization because database is not installed yet
+    //locale resources fpr installation process are stored into \App_Data\Localization\Installation directory
+    var ILS = EngineContext.Current.Resolve<IInstallationLocalizationService>();
+    Layout = "../Shared/_LayoutInstallation.cshtml";
+}
+@Scripts.Render("~/bundles/extensions")
+<h2 style="margin: 55px 0;">@ILS.GetResource("Title")</h2>
+<body class="container-main">
+    @using (Html.BeginForm("Index", "Install", System.Web.Mvc.FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+        @Html.ValidationSummary(true)        
+    
+        <div class="well">
+            <div>
+                @ILS.GetResource("Tooltip2")
+                <div>
+                    <h3>@ILS.GetResource("InitialInformation")</h3>
+                </div>
+                <div class="control-group">
+                    @Html.Label(ILS.GetResource("AdminLoginName"), new { @class = "control-label" })
+                    <div class="controls">
+                        @Html.TextBoxFor(x => x.AdminLoginName)
+                    </div>
+                </div>
+                <div class="control-group">
+                    @Html.Label(ILS.GetResource("AdminPassword"), new { @class = "control-label" })
+                    <div class="controls">
+                        @Html.PasswordFor(x => x.AdminPassword)
+                        @Html.ValidationMessageFor(model => model.AdminPassword, null, new { @class = "text-error" })
+                    </div>
+                </div>
+                <div class="control-group">
+                    @Html.Label(ILS.GetResource("ConfirmPassword"), new { @class = "control-label" })
+                    <div class="controls">
+                        @Html.PasswordFor(x => x.ConfirmPassword)
+                        @Html.ValidationMessageFor(model => model.ConfirmPassword, null, new { @class = "text-error" })
+                    </div>
+                </div>
+                <div>
+                    <h3>@ILS.GetResource("DatabaseInformation")</h3>
+                </div>
+                <div>
+                    <div>
+                        <h4>@ILS.GetResource("SqlStandard")</h4>
+                        <div id="sqlConnectionInfo">
+                            <div>
+                                <div class="well">
+                                    <div>
+                                        @Html.Label(ILS.GetResource("CreateDatabaseIfDoesNotExist"), new { @class = "checkbox inline" })
+                                        @Html.CheckBoxFor(x => x.MySqlServerCreateDatabase)
+                                        @Html.Label(ILS.GetResource("InstallTestData"), new { @class = "checkbox inline" })
+                                        @Html.CheckBoxFor(x => x.InstallTestData)
+                                    </div>
+                                    <br />
+                                    @Html.Label(ILS.GetResource("ConnectionStringValues"), new { @class = "radio inline" })
+                                    @Html.RadioButton("SqlConnectionInfo", "sqlconnectioninfo_values", (Model.MySqlConnectionInfo == "sqlconnectioninfo_values"), new { id = "sqlconnectioninfo_values", onclick = "toggleSqlConnectionInfo(this)" })
+                                    @Html.Label(ILS.GetResource("RawConnectionString"), new { @class = "radio inline" })
+                                    @Html.RadioButton("SqlConnectionInfo", "sqlconnectioninfo_raw", (Model.MySqlConnectionInfo == "sqlconnectioninfo_raw"), new { id = "sqlconnectioninfo_raw", onclick = "toggleSqlConnectionInfo(this)" })
+                                    <div id="sqlDatabaseInfo">
+                                        <div class="control-group">
+                                            @Html.Label(ILS.GetResource("SqlServerName"), new { @class = "control-label" })
+                                            <div class="controls">
+                                                @Html.TextBoxFor(x => x.MySqlServerName)
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            @Html.Label(ILS.GetResource("DatabaseName"), new { @class = "control-label" })
+                                            <div class="controls">
+                                                @Html.TextBoxFor(x => x.MySqlDatabaseName)
+                                            </div>
+                                        </div>
+                                        @*<div class="control-group">
+                                            @Html.Label(ILS.GetResource("SqlAuthentication"), new { @class = "radio inline" })
+                                            @Html.RadioButton("SqlAuthenticationType", "sqlauthentication", (Model.SqlAuthenticationType == "sqlauthentication"), new { id = "sqlauthenticationtype_sql", onclick = "toggleSqlAuthenticationType(this)" })
+                                            @Html.Label(ILS.GetResource("WindowsAuthentication"), new { @class = "radio inline" })
+                                            @Html.RadioButton("SqlAuthenticationType", "windowsauthentication", (Model.SqlAuthenticationType == "windowsauthentication"), new { id = "sqlauthenticationtype_windows", onclick = "toggleSqlAuthenticationType(this)" })
+                                        </div>*@
+                                        <div id="pnlSqlServerUsername">
+                                            <div class="control-group">
+                                                @Html.Label(ILS.GetResource("SqlServerUsername"), new { @class = "control-label" })
+                                                <div class="controls">
+                                                    @Html.TextBoxFor(x => x.MySqlUsername)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="pnlSqlServerPassword">
+                                            <div class="control-group">
+                                                @Html.Label(ILS.GetResource("SqlServerPassword"), new { @class = "control-label" })
+                                                <div class="controls">
+                                                    @Html.PasswordFor(x => x.MySqlPassword)
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="sqlDatabaseConnectionString">
+                                        <div class="control-group">
+                                            @Html.Label(ILS.GetResource("ConnectionString"), new { @class = "control-label" })
+                                            <div class="controls">
+                                                @Html.TextBoxFor(x => x.MySqlDatabaseConnectionString, new { style = "width:90%;", @placeholder = " Data Source=sqlServerName;Initial Catalog=dbName;Persist Security Info=True;UserID=userName;Password=password" })
+                                                <p>
+                                                    <small>@ILS.GetResource("Example"): Data Source=sqlServerName;Initial Catalog=dbName;Persist
+                                                        Security Info=True;UserID=userName;Password=password</small>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        @Html.Label(ILS.GetResource("CustomCollation"), new { @class = "checkbox inline" })
+                                        @Html.CheckBoxFor(x => x.UseCustomCollation, new { id = "UseCustomCollation", onclick = "toggleCollation(this)" })
+                                        <div id="Collation" class="controls" style="display: none;">
+                                            @Html.TextBoxFor(x => x.Collation, new { style = "width:50%;" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="throbber">
+                    <input type="submit" value="@ILS.GetResource("Install")" style="width: 100px;" />
+                </div>
+            </div>
+        </div>    
+    }
+</body>
+<script type="text/javascript">
+    //$(document).ready(function () {
+    //    $('input[name=mySqlConnectionInfo]').click(function () {
+    //        toggleSqlConnectionInfo(this);
+    //    });
+
+    //    //$('input[name=SqlAuthenticationType]').click(function () {
+    //    //    toggleSqlAuthenticationType(this);
+    //    //});
+    //    $('input[name=UseCustomCollation]').click(function () {
+    //        toggleCollation(this);
+    //    });
+    //});
+
+    //function toggleSqlConnectionInfo() {
+    //    var selectedProvider = $("input[name=mySqlConnectionInfo]:checked").attr('id');
+    //    if (selectedProvider == 'sqlconnectioninfo_values') {
+    //        $('#sqlDatabaseInfo').show();
+    //        $('#sqlDatabaseConnectionString').hide();
+    //    }
+    //    else if (selectedProvider == 'sqlconnectioninfo_raw') {
+    //        $('#sqlDatabaseInfo').hide();
+    //        $('#sqlDatabaseConnectionString').show();
+    //    }
+    //}
+
+    //function toggleSqlAuthenticationType() {
+    //    var selectedProvider = $("input[name=SqlAuthenticationType]:checked").attr('id');
+    //    if (selectedProvider == 'sqlauthenticationtype_sql') {
+    //        $('#pnlSqlServerUsername').show();
+    //        $('#pnlSqlServerPassword').show();
+    //    }
+    //    else if (selectedProvider == 'sqlauthenticationtype_windows') {
+    //        $('#pnlSqlServerUsername').hide();
+    //        $('#pnlSqlServerPassword').hide();
+    //    }
+    //}
+
+
+    //function toggleCollation() {
+    //    if ($('input[name=UseCustomCollation]').is(':checked')) {
+    //        $('#Collation').show();
+    //    }
+    //    else {
+    //        $('#Collation').hide();
+    //    }
+    //}
+
+    $("form").on("submit", function () {
+        $.blockUI({
+        message: $('#displayBox').removeAttr('style'), 
+        css: {
+            top: ($(window).height() - 100) / 2 + 'px',
+            left: ($(window).width() - 400) / 2 + 'px',
+            width: '400px',
+            height: '20px',
+            border: 'none',
+            padding: '5px',
+            backgroundColor: '#000',
+            'border-radius': '4px',
+            opacity: .5,
+            color: '#fff'
+        }
+        });
+    });
+</script>
+
+<div id="displayBox" class="progress progress-danger progress-striped active" style="display: none;">
+  <div class="bar" style="width: 100%;"><b>@ILS.GetResource("PleaseWait")</b></div>
+</div>

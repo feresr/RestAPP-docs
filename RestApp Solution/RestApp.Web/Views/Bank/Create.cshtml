@@ -1,0 +1,24 @@
+﻿@model RestApp.Web.Models.Banks.BankModel
+@{
+    ViewBag.Title = T("View.Bank.Create");
+}
+<div>
+    <a href="@Url.Action("Index")" class="btn btn-inverse btn-mini"><i class="icon-arrow-left icon-white">
+    </i>@T("View.Common.BackToList").Text</a>
+</div>
+@using (Html.BeginForm("Create", "Bank", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+   
+    <div class="well">
+        <legend>@T("View.Bank.Create.New")</legend>
+        @Html.ValidationSummary(true)
+        @Html.Partial("_CreateOrEditBank", Model)
+    </div>
+}
+<div>
+    <a href="@Url.Action("Index")" class="btn btn-inverse btn-mini"><i class="icon-arrow-left icon-white">
+    </i>@T("View.Common.BackToList").Text</a>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

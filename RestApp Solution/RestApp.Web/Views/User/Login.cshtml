@@ -1,0 +1,47 @@
+﻿@model RestApp.Web.Models.Users.LoginModel
+@{
+    ViewBag.Title = T("View.User.Login.Login").Text;
+}
+<section id="loginForm" style="padding-top: 40px;">
+    @using (Html.BeginForm("Login", "User", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-signin" }))
+    {
+        <hgroup class="title">
+            <h1>@ViewBag.Title</h1>
+        </hgroup>
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-error" })
+
+        <div class="control-group">
+            @Html.ValidationMessageFor(model => model.LoginName, null, new { @class = "text-error" })
+            <div class="controls">
+                @Html.TextBoxFor(m => m.LoginName, new { @class = "input-block-level", @placeholder = T("View.User.Login.LoginName") })                
+            </div>
+            @Html.ValidationMessageFor(model => model.Password, null, new { @class = "text-error" })
+             <div class="controls">
+                @Html.PasswordFor(m => m.Password, new { @class = "input-block-level", @placeholder = T("View.User.Login.Password") })                
+            </div>
+        </div>        
+        <div class="control-group">
+            <div class="controls">                
+                @Html.CheckBoxFor(m => m.RememberMe, new { @style = "margin: 0" })
+                @Html.LabelFor(m => m.RememberMe, new { @style = "display: inline-block; vertical-align: text-top" })              
+                
+            </div>
+            </div>
+        <div class="control-group">
+            <div class="controls">
+                <input type="submit" class="btn btn-large btn-primary" value="@T("View.User.Login.LoginAccess").Text" />
+            </div>
+        </div>
+        
+    }
+</section>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script>
+    $("form").on("submit", function () {
+        $.blockUI({ message: "Procesando..." });
+    });
+</script>

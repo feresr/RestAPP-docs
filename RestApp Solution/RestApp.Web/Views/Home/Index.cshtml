@@ -1,0 +1,143 @@
+﻿@model RestApp.Web.Models.Security.HomePanelSecurityModel
+@{
+    ViewBag.Title = "Página principal";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/MainMenuUI")
+</head>
+<body class="modern-ui animated fadeInLeftBig">
+    <div class="page secondary">
+        <script type="text/javascript">
+            function getWindowsSize() {
+                $("#sizeX").html('W: ' + $(window).width());
+                $("#sizeY").html('H: ' + $(window).height());
+            }
+            $(function () {
+                getWindowsSize();
+                $(window).resize(function () {
+                    getWindowsSize()
+                });
+            })
+        </script>
+        <div style="display: none; position: fixed; height: 100px; width: 100px; padding: 10px;
+            z-index: 10000;" class="bottom-right bg-color-darken fg-color-white">
+            Screen size:
+            <div id="sizeX">
+                W: 1423</div>
+            <div id="sizeY">
+                H: 509</div>
+        </div>
+        <div class="page-region">
+            <div class="page-region-content">
+                <div class="row">
+                    <div class="tiles clearfix">
+                        <h2>
+                            Inicio</h2>
+                        <div class="tile bg-color-greenLight">
+                            <div class="tile-content">
+                                @* <img src="" alt="">*@
+                            </div>
+                            <div class="brand">
+                                <span class="name">Sedronar</span>
+                            </div>
+                        </div>
+                        <div class="tile bg-color-orange">
+                            <div class="tile-content">
+                                @*<img src="">*@
+                            </div>
+                            <div class="brand">
+                                <span class="name">Renar</span>
+                            </div>
+                        </div>
+                        <div class="tile image">
+                            <div class="tile-content">
+                                @*<img src="../../Content/images/reportes.png" />*@
+                            </div>
+                            <div class="brand">
+                                <span class="name">Reportes</span>
+                            </div>
+                        </div>
+                        <div class="tile image">
+                            <b class="check"></b>
+                            <div class="tile-content">
+                               @* <img src="../../Content/images/Informes.png" />*@
+                            </div>
+                            <div class="brand">
+                                <span class="name">Informes</span>
+                            </div>
+                        </div>
+                        <div class="tile double image">
+                            <div class="tile-content">
+                                <img src="../../Content/images/embarque.png" />
+                            </div>
+                            <div class="brand">
+                                <span class="name">Carpetas de Embarque</span>
+                            </div>
+                        </div>
+                        <div class="tileDisabled">
+                            <b class="check"></b>
+                            <div class="tile-content">
+                                @*<img src="">*@
+                            </div>
+                            <div class="brand">
+                                <span class="name">Vencimientos</span>
+                            </div>
+                        </div>
+                        <div class="tile bg-color-blueDark">
+                            <b class="check"></b>
+                            <div class="tile-content">
+                                <div class="brand">
+                                    <span class="name">Bancos</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tile image" onclick="location.href='/Home/Administration/'">
+                            <div class="tile-content">
+                                <img src="" />
+                            </div>
+                            <div class="brand">
+                                <span class="name">@T("View.Common.Administration")</span>
+                            </div>
+                        </div>
+                        <div class="tile image">
+                            <b class="check"></b>
+                            <div class="tile-content">
+                                <img src="../../Content/images/articulos.png" />
+                            </div>
+                            <div class="brand">
+                                <span class="name">Articulos</span>
+                            </div>
+                        </div>
+                        <div class="tile bg-color-yellow icon" onclick="location.href='/User/LogOff/'">
+                            <div class="tile-content">
+                                <img src="../../Content/images/menuUI/LogOff.png" />
+                            </div>
+                            <div class="brand">
+                                <span class="name">Cerrar Sesión</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <p>
+                    RestApp
+                    <br />
+                    Austin Powder Argentina</p>
+            </div>
+        </footer>
+</body>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/modernui")
+</html>

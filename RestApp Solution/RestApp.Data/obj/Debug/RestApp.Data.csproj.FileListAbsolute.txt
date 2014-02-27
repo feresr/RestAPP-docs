@@ -1,0 +1,41 @@
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Data\obj\Debug\RestApp.Data.csprojResolveAssemblyReference.cache
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Data\bin\Debug\RestApp.Data.dll.config
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Data\bin\Debug\RestApp.Data.dll
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Data\bin\Debug\RestApp.Data.pdb
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Data\bin\Debug\EntityFramework.dll
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Data\bin\Debug\MySql.Data.dll
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Data\bin\Debug\MySql.Data.Entity.dll
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Data\bin\Debug\RestApp.Common.dll
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Data\bin\Debug\RestApp.Core.dll
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Data\bin\Debug\NPOI.dll
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Data\bin\Debug\Autofac.dll
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Data\bin\Debug\Autofac.Integration.Mvc.dll
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Data\bin\Debug\Ionic.Zip.dll
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Data\bin\Debug\RestApp.Common.pdb
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Data\bin\Debug\RestApp.Core.pdb
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Data\bin\Debug\EntityFramework.xml
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Data\bin\Debug\NPOI.xml
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Data\bin\Debug\Autofac.xml
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Data\obj\Debug\RestApp.Data.dll
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Data\obj\Debug\RestApp.Data.pdb
+E:\Proyecto\RestApp\RestApp\trunk\RestApp.Data\bin\Debug\Autofac.Integration.Mvc.xml
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Data\bin\Debug\RestApp.Data.dll.config
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Data\bin\Debug\RestApp.Data.dll
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Data\bin\Debug\RestApp.Data.pdb
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Data\bin\Debug\Autofac.dll
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Data\bin\Debug\Autofac.Integration.Mvc.dll
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Data\bin\Debug\EntityFramework.dll
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Data\bin\Debug\MySql.Data.Entity.EF6.dll
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Data\bin\Debug\RestApp.Common.dll
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Data\bin\Debug\RestApp.Core.dll
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Data\bin\Debug\NPOI.dll
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Data\bin\Debug\Ionic.Zip.dll
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Data\bin\Debug\RestApp.Common.pdb
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Data\bin\Debug\RestApp.Core.pdb
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Data\bin\Debug\Autofac.xml
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Data\bin\Debug\Autofac.Integration.Mvc.xml
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Data\bin\Debug\EntityFramework.xml
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Data\bin\Debug\NPOI.xml
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Data\obj\Debug\RestApp.Data.csprojResolveAssemblyReference.cache
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Data\obj\Debug\RestApp.Data.dll
+E:\Proyecto\RestApp\RestApp Solution\RestApp.Data\obj\Debug\RestApp.Data.pdb
