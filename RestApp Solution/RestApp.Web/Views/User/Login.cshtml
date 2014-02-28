@@ -1,47 +1,72 @@
 ﻿@model RestApp.Web.Models.Users.LoginModel
 @{
     ViewBag.Title = T("View.User.Login.Login").Text;
+    Layout = "~/Views/Shared/_LayoutForLogin.cshtml";
 }
-<section id="loginForm" style="padding-top: 40px;">
+
     @using (Html.BeginForm("Login", "User", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-signin" }))
     {
-        <hgroup class="title">
-            <h1>@ViewBag.Title</h1>
-        </hgroup>
+        <h2 class="form-signin-heading">Please sign in</h2>
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true, "", new { @class = "text-error" })
 
-        <div class="control-group">
-            @Html.ValidationMessageFor(model => model.LoginName, null, new { @class = "text-error" })
-            <div class="controls">
-                @Html.TextBoxFor(m => m.LoginName, new { @class = "input-block-level", @placeholder = T("View.User.Login.LoginName") })                
-            </div>
-            @Html.ValidationMessageFor(model => model.Password, null, new { @class = "text-error" })
-             <div class="controls">
-                @Html.PasswordFor(m => m.Password, new { @class = "input-block-level", @placeholder = T("View.User.Login.Password") })                
-            </div>
-        </div>        
-        <div class="control-group">
-            <div class="controls">                
-                @Html.CheckBoxFor(m => m.RememberMe, new { @style = "margin: 0" })
-                @Html.LabelFor(m => m.RememberMe, new { @style = "display: inline-block; vertical-align: text-top" })              
-                
-            </div>
-            </div>
-        <div class="control-group">
-            <div class="controls">
-                <input type="submit" class="btn btn-large btn-primary" value="@T("View.User.Login.LoginAccess").Text" />
-            </div>
-        </div>
         
+        @Html.TextBoxFor(m => m.LoginName, new { @class = "form-control", @placeholder = "User Name", autofocus="", required="" })
+
+        @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Password", required="" })                
+
+        
+        <label class="checkbox">
+            @Html.CheckBoxFor(m => m.RememberMe)
+            Remember me
+        </label>
+        
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
     }
-</section>
+
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
 
-<script>
-    $("form").on("submit", function () {
-        $.blockUI({ message: "Procesando..." });
-    });
-</script>
+<style type="text/css">
+    body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+</style>

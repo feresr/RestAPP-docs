@@ -6,260 +6,141 @@
     <title>@ViewBag.Title</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <meta name="viewport" content="width=device-width" />
-    @Scripts.Render("~/bundles/modernizr")
-    @Styles.Render("~/Content/bootstrap")
-    @Styles.Render("~/Content/jquery")
-    @Styles.Render("~/Content/lightbox")
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryui")
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/datatables")
-    @Scripts.Render("~/bundles/lightbox")
+    @Styles.Render("~/Content/basic")
+    @Styles.Render("~/Content/font")
+
+    @Scripts.Render("~/bundles/basic")
+    @Scripts.Render("~/bundles/basicExtras")
+
     @RenderSection("scripts", required: false)
 </head>
 <body class="body-layout">
-    <div class="container">
+    <div id="wrapper">
+        
+        @Html.Partial("_NavBar")
+
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li class="sidebar-search">
+                        <div class="input-group custom-search-form">
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                        <!-- /input-group -->
+                    </li>
+                    <li>
+                        <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li>
+                                <a href="flot.html">Flot Charts</a>
+                            </li>
+                            <li>
+                                <a href="morris.html">Morris.js Charts</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
+                    </li>
+                    <li>
+                        <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li>
+                                <a href="panels-wells.html">Panels and Wells</a>
+                            </li>
+                            <li>
+                                <a href="buttons.html">Buttons</a>
+                            </li>
+                            <li>
+                                <a href="notifications.html">Notifications</a>
+                            </li>
+                            <li>
+                                <a href="typography.html">Typography</a>
+                            </li>
+                            <li>
+                                <a href="grid.html">Grid</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li>
+                                <a href="#">Second Level Item</a>
+                            </li>
+                            <li>
+                                <a href="#">Second Level Item</a>
+                            </li>
+                            <li>
+                                <a href="#">Third Level <span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level collapse">
+                                    <li>
+                                        <a href="#">Third Level Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Third Level Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Third Level Item</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Third Level Item</a>
+                                    </li>
+                                </ul>
+                                <!-- /.nav-third-level -->
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li>
+                                <a href="blank.html">Blank Page</a>
+                            </li>
+                            <li>
+                                <a href="login.html">Login Page</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                </ul>
+                <!-- /#side-menu -->
+            </div>
+            <!-- /.sidebar-collapse -->
+        </nav>
+        <!-- /.navbar-static-side -->
         @if (Request.IsAuthenticated)
-        {   
-            <text>
-            @Html.Partial("HeaderPartial")
-            @{Html.RenderPartial("MenuPartial");}
-            </text>        
-        }
-    </div>
-    <div class="container-fluid">
-        @RenderSection("featured", required: false)
-        @Html.Partial("_Notifications")
-        <div class="animated fadeIn">
-            @RenderBody()
-        </div>
-    </div>
-    <script>
-//        /* Set the defaults for DataTables initialisation */
-//        $.extend(true, $.fn.dataTable.defaults, {
-//            "sDom": "<'row-fluid'<'span6'l><'span6'p>r>t<'row-fluid'<'span6'i><'span6'p>>",
-//            "sPaginationType": "bootstrap",
-//            "oLanguage": {
-//                "sLengthMenu": "_MENU_ records per page"
-//            }
-//        });
-
-        /* Default class modification */
-        $.extend($.fn.dataTableExt.oStdClasses, {
-            "sWrapper": "dataTables_wrapper form-inline"
-        });
-
-
-        /* API method to get paging information */
-        $.fn.dataTableExt.oApi.fnPagingInfo = function (oSettings) {
-            return {
-                "iStart": oSettings._iDisplayStart,
-                "iEnd": oSettings.fnDisplayEnd(),
-                "iLength": oSettings._iDisplayLength,
-                "iTotal": oSettings.fnRecordsTotal(),
-                "iFilteredTotal": oSettings.fnRecordsDisplay(),
-                "iPage": Math.ceil(oSettings._iDisplayStart / oSettings._iDisplayLength),
-                "iTotalPages": Math.ceil(oSettings.fnRecordsDisplay() / oSettings._iDisplayLength)
-            };
-        };
-
-
-        /* Bootstrap style pagination control */
-        $.extend($.fn.dataTableExt.oPagination, {
-            "bootstrap": {
-                "fnInit": function (oSettings, nPaging, fnDraw) {
-                    var oLang = oSettings.oLanguage.oPaginate;
-                    var fnClickHandler = function (e) {
-                        e.preventDefault();
-                        if (oSettings.oApi._fnPageChange(oSettings, e.data.action)) {
-                            fnDraw(oSettings);
-                        }
-                    };
-
-                    $(nPaging).addClass('pagination').append(
-				'<ul>' +
-					'<li class="prev disabled"><a href="#">&larr; ' + oLang.sPrevious + '</a></li>' +
-					'<li class="next disabled"><a href="#">' + oLang.sNext + ' &rarr; </a></li>' +
-				'</ul>'
-			);
-                    var els = $('a', nPaging);
-                    $(els[0]).bind('click.DT', { action: "previous" }, fnClickHandler);
-                    $(els[1]).bind('click.DT', { action: "next" }, fnClickHandler);
-                },
-
-                "fnUpdate": function (oSettings, fnDraw) {
-                    var iListLength = 5;
-                    var oPaging = oSettings.oInstance.fnPagingInfo();
-                    var an = oSettings.aanFeatures.p;
-                    var i, j, sClass, iStart, iEnd, iHalf = Math.floor(iListLength / 2);
-
-                    if (oPaging.iTotalPages < iListLength) {
-                        iStart = 1;
-                        iEnd = oPaging.iTotalPages;
-                    }
-                    else if (oPaging.iPage <= iHalf) {
-                        iStart = 1;
-                        iEnd = iListLength;
-                    } else if (oPaging.iPage >= (oPaging.iTotalPages - iHalf)) {
-                        iStart = oPaging.iTotalPages - iListLength + 1;
-                        iEnd = oPaging.iTotalPages;
-                    } else {
-                        iStart = oPaging.iPage - iHalf + 1;
-                        iEnd = iStart + iListLength - 1;
-                    }
-
-                    for (i = 0, iLen = an.length; i < iLen; i++) {
-                        // Remove the middle elements
-                        $('li:gt(0)', an[i]).filter(':not(:last)').remove();
-
-                        // Add the new list items and their event handlers
-                        for (j = iStart; j <= iEnd; j++) {
-                            sClass = (j == oPaging.iPage + 1) ? 'class="active"' : '';
-                            $('<li ' + sClass + '><a href="#">' + j + '</a></li>')
-						.insertBefore($('li:last', an[i])[0])
-						.bind('click', function (e) {
-						    e.preventDefault();
-						    oSettings._iDisplayStart = (parseInt($('a', this).text(), 10) - 1) * oPaging.iLength;
-						    fnDraw(oSettings);
-						});
-                        }
-
-                        // Add / remove disabled classes from the static elements
-                        if (oPaging.iPage === 0) {
-                            $('li:first', an[i]).addClass('disabled');
-                        } else {
-                            $('li:first', an[i]).removeClass('disabled');
-                        }
-
-                        if (oPaging.iPage === oPaging.iTotalPages - 1 || oPaging.iTotalPages === 0) {
-                            $('li:last', an[i]).addClass('disabled');
-                        } else {
-                            $('li:last', an[i]).removeClass('disabled');
-                        }
-                    }
-                }
-            }
-        });
-
-
-        /*
-        * TableTools Bootstrap compatibility
-        * Required TableTools 2.1+
-        */
-        if ($.fn.DataTable.TableTools) {
-            // Set the classes that TableTools uses to something suitable for Bootstrap
-            $.extend(true, $.fn.DataTable.TableTools.classes, {
-                "container": "DTTT btn-group",
-                "buttons": {
-                    "normal": "btn",
-                    "disabled": "disabled"
-                },
-                "collection": {
-                    "container": "DTTT_dropdown dropdown-menu",
-                    "buttons": {
-                        "normal": "",
-                        "disabled": "disabled"
-                    }
-                },
-                "print": {
-                    "info": "DTTT_print_info modal"
-                },
-                "select": {
-                    "row": "active"
-                }
-            });
-
-            // Have the collection use a bootstrap compatible dropdown
-            $.extend(true, $.fn.DataTable.TableTools.DEFAULTS.oTags, {
-                "collection": {
-                    "container": "ul",
-                    "button": "li",
-                    "liner": "a"
-                }
-            });
-        }
-
-
-        /* Table initialisation */
-        $(document).ready(function () {
-            dataTableOption('#tableList');
-        });
-
-        function dataTableOption(table) {
-            $(table).dataTable({
-                "sDom": "<'row'<'span6'l><'span6'p>r>t<'row'<'span6'i><'span6'p>>",
-                "sPaginationType": "bootstrap",
-                "oLanguage": {
-                    "sProcessing": '@T("View.Table.Processing").Text',
-                    "sLengthMenu": '@T("View.Table.Length.LengthMenu").Text'.format('_MENU_'),
-                    //                    "sZeroRecords": "No se encontraron resultados",
-                    "sEmptyTable": '@T("View.Table.Length.EmptyTable").Text',
-                    "sInfo": '@T("View.Table.Info.Info").Text'.format('_START_', '_END_', '_TOTAL_'),
-                    "sInfoEmpty": '@T("View.Table.Info.InfoEmpty").Text',
-                    //                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
-                    //                    "sInfoPostFix": "",
-                    //                    "sSearch": "Buscar:",
-                    //                    "sUrl": "",
-                    //                    "sInfoThousands": ",",
-                    "sLoadingRecords": '@T("View.Table.Info.LoadingRecords").Text',
-                    "oPaginate": {
-                        "sFirst": '@T("View.Table.Pagination.First").Text',
-                        "sLast": '@T("View.Table.Pagination.Last").Text',
-                        "sNext": '@T("View.Table.Pagination.Next").Text',
-                        "sPrevious": '@T("View.Table.Pagination.Previous").Text'
-                    },
-                    "fnInfoCallback": null,
-                    "oAria": {
-                        "sSortAscending": ": Activar para ordernar la columna de manera ascendente",
-                        "sSortDescending": ": Activar para ordernar la columna de manera descendente"
-                    }
-                }
-            });
-        }
-
-        function dataTableOptionModal(table) {
-            $(table).dataTable({
-                "sDom": "<'row'<'span2'l><'span3'p>r>t<'row'<'span2'i><'span3'p>>",
-                "sPaginationType": "bootstrap",
-                "oLanguage": {
-                    "sProcessing": '@T("View.Table.Processing").Text',
-                    "sLengthMenu": '@T("View.Table.Length.LengthMenu").Text'.format('_MENU_'),
-                    //                    "sZeroRecords": "No se encontraron resultados",
-                    "sEmptyTable": '@T("View.Table.Length.EmptyTable").Text',
-                    "sInfo": '@T("View.Table.Info.Info").Text'.format('_START_', '_END_', '_TOTAL_'),
-                    "sInfoEmpty": '@T("View.Table.Info.InfoEmpty").Text',
-                    //                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
-                    //                    "sInfoPostFix": "",
-                    //                    "sSearch": "Buscar:",
-                    //                    "sUrl": "",
-                    //                    "sInfoThousands": ",",
-                    "sLoadingRecords": '@T("View.Table.Info.LoadingRecords").Text',
-                    "oPaginate": {
-                        "sFirst": '@T("View.Table.Pagination.First").Text',
-                        "sLast": '@T("View.Table.Pagination.Last").Text',
-                        "sNext": '@T("View.Table.Pagination.Next").Text',
-                        "sPrevious": '@T("View.Table.Pagination.Previous").Text'
-                    },
-                    "fnInfoCallback": null,
-                    "oAria": {
-                        "sSortAscending": ": Activar para ordernar la columna de manera ascendente",
-                        "sSortDescending": ": Activar para ordernar la columna de manera descendente"
-                    }
-                }
-            });
-        }
-
-        // Similar String.Format() to use replace eg: {1} this format
-        String.prototype.format = function()
         {
-           var content = this;
-           for (var i=0; i < arguments.length; i++)
-           {
-                var replacement = '{' + i + '}';
-                content = content.replace(replacement, arguments[i]);  
-           }
-           return content;
-        };       
-    </script>
+            
+        }
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    @RenderSection("featured", required: false)
+                    @Html.Partial("_Notifications")
+                    @RenderBody()
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+
 </body>
 </html>

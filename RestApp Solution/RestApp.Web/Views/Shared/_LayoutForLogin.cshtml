@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/basic")
+
+    @Scripts.Render("~/bundles/basic")
+
+    @RenderSection("scripts", required: false)
+</head>
+<body class="body-layout">
+    <div class="container">
+        @if (Request.IsAuthenticated)
+        {   
+            <text>
+            @Html.Partial("HeaderPartial")
+            @{Html.RenderPartial("MenuPartial");}
+            </text>        
+        }
+    </div>
+    <div class="container-fluid">
+        @RenderSection("featured", required: false)
+        @Html.Partial("_Notifications")
+        <div class="animated fadeIn">
+            @RenderBody()
+        </div>
+    </div>
+   </body>
+</html>

@@ -29,18 +29,6 @@ namespace RestApp.Web.Controllers
 
         public ActionResult Index()
         {
-            var homePanelSecurity = new HomePanelSecurityModel();
-
-            homePanelSecurity.PanelAdministration = gPermissionService.Authorize(StandardPermissionProvider.AccessPanelAdministration);
-            homePanelSecurity.PanelSedronar = gPermissionService.Authorize(StandardPermissionProvider.AccessPanelSedronar);
-            homePanelSecurity.PanelRenar = false;
-            homePanelSecurity.PanelBank = false;
-
-            return View(homePanelSecurity);
-        }
-
-        public ActionResult Administration()
-        {
             return View();
         }
     }
